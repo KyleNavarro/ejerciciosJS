@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Manipulando arrays</h1>
+
+
+    <script>
+        const datos = [
+            100,                   
+            'Hola mundo',         
+            true,                   
+            false,                  
+            0,                             
+            -50,                           
+            3.1416,                       
+            [1, 2, 3],                     
+            { nombre: 'Lucía' },           
+            function() { return 'JS'; },   
+            'Symbol',               
+            -7, 
+            89,                    
+            '🚀',                          
+            '123',                         
+            Infinity,                      
+            'hola soy kyle',                                           
+            ];
+
+
+        document.writeln(datos.length);
+        datos.with(0, 'hola perro');
+        datos.forEach((element, index) => {
+            document.writeln(`<p>Elemento ${index} : ${element}</p>`);
+        });
+    </script>
+</body>
+</html>
