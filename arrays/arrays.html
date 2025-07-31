@@ -32,10 +32,30 @@
 
 
         document.writeln(datos.length);
-        datos.with(0, 'hola perro');
+        
         datos.forEach((element, index) => {
-            document.writeln(`<p>Elemento ${index} : ${element}</p>`);
+            document.writeln(`<p>Elemento ${index} : ${element}</p> <br>`);
+            
         });
+        
+        document.writeln(`este es with(): ${datos.with(15, 'hola perro')} <br>`) //metodo with(index, balue)
+        //modificar el index seleccionado por el valor indicado
+
+        //push
+        document.writeln(`este es push(): ${datos.push(' ')} <br>`)//añade elementos al final del array
+        datos.forEach((element, index) => {
+            document.writeln(`<p>Elemento ${index} : ${element}</p> <br>`);
+            
+        });//push tambien puede agregar cadenas de texto vacias
+
+        
+       //pop, elimina el ultimo elemento del array
+        document.writeln(`este es pop(): ${datos.pop()} <br>`)
+        datos.forEach((element, index) => {
+            document.writeln(`<p>Elemento ${index} : ${element}</p> <br>`);
+            
+        });
+
     </script>
 </body>
 </html>
