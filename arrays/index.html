@@ -16,10 +16,41 @@
             'diadema de ravenclaw',
             'niagini, la serpiente'            
         ); //constructor
-        const hechizos = [3];//literal
+        const hechizos = [
+            'winwardium leviosá',
+            'especto patronus',
+            'oculus reparus',
+            'criciatus',
+            'avada kedavra'
+        ];//literal
+
+        const mensajes = 'hola mi nombre es kyle y quiero ser un array';
+        const array = Array.from( mensajes );
+        array.push(3256874);
+        console.log(array);
+
+        const numeros = 153652;
+        console.log(numeros);
+        const numerosArray = Array.from(String(numeros), Number);//Para convertir una variable de numeros a un array
+        //debemos primero convertirlo a string y luego volver a convertirlo en Number, ya que la variable 
+        // numeros = 153652 es un numero completo, por lo tanto no es iterable.
+        console.log(numerosArray);
+
+
+        
 
         console.log(alma_voldemort);
         console.log(hechizos);
+
+        alma_voldemort[12] = 'aqui cambio YO';
+
+        
+
+        document.writeln(alma_voldemort);
+        document.writeln('<hr>');
+        document.writeln(hechizos);
+
+        document.writeln('<hr>');
         
     </script>
 </body>
