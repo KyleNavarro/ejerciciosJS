@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPLICE</title>
+</head>
+<body>
+    <h1>metodo splice</h1>
+    <p>hace todo lo del pop shift unshift y push</p>
+
+
+
+
+    <script>
+        const usuarios = [
+            'kyle',
+            'laura',
+            'melisa',
+            'diana',
+            'dayana',
+            'milena',
+            'alicia',
+            'orlando'
+        ]
+
+
+        const eliminados = usuarios.splice(4, 2, 'aqui meto un dato nuevo');//corta desde el cuarto elemento con un solo argumento
+
+        // un segundo argumento es elnumero de elementos que quiere eliminar
+
+        //y un tercer argumento o mas empieza a agregar elementos desde donde está el puntero
+
+        document.writeln(usuarios)
+        document.writeln('<hr>')
+        document.writeln(eliminados)
+
+    </script>
+</body>
+</html>

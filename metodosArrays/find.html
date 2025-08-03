@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find()</title>
+</head>
+<body>
+    <h1>find()</h1>
+    <p>devuelve cualquier elemento dentro del array y retorna true o false y corta a la primera condición que le dé verdadero</p>
+    <script>
+        const usuarios = [
+            'kyle',
+            'laura',
+            'melisa',
+            'diana',
+            'dayana',
+            'milena',
+            'alicia',
+            'orlando'
+        ]
+        
+        function lista (){
+            usuarios.forEach(u => 
+                document.writeln(`usuario : ${u} <br>` )
+            );
+        }
+        lista()
+
+        const encontrado = usuarios.find(u => u.length > 3);
+        document.writeln(encontrado);// al encontrar el primer elemento que cumpla con la condición para el programa
+
+        
+        
+
+
+
+
+    </script>
+</body>
+</html>
