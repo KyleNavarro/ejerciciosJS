@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //de esta manera el indice busca cualquier espacio en memoria del script(variable o constante), que se llame indice y así mismo busca su valor
+        const indice = prompt('Como se llama el indice del uausrio');
+        const valor = prompt(`dame el valor de ${indice}`);
+
+        const obj = {
+            [indice]: valor //la constante indice debe pasarse en corchetes []
+        };
+
+        console.log(obj);
+    </script>
+</body>
+</html>
