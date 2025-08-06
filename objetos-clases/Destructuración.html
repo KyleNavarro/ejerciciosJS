@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        const cfgEmail = { 
+            smtp: 'mail.google.com',
+            user: 'pada@gmail.com',
+            pass: 'pwd1234'
+        }
+        const cfgApi = {
+            url: 'api.padawanstrainer.com.ar',
+            method: 'get',
+            token: 'token1234'
+        }
+
+        const nombre = 'german';
+        const apellido = 'email';
+        const trabajo = 'programador';
+
+        const datos = { nombre, apellido, trabajo }
+
+
+        const cfgFull = { ...cfgEmail, ...cfgApi };
+        
+        const {
+            smtp: servidor,
+            user: usuario,
+            falopa: yapa = 'merquita rica',
+            ...cfg
+        } = cfgFull;
+
+        console.log( {servidor} );
+        console.log( {usuario} );
+        console.log( {yapa} );
+        console.log( {cfg} );
+
+        //console.table( cfgFull );
+
+        // quedamos es 3.39
+    </script>
+</body>
+</html>
+
