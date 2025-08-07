@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+</head>
+<body>
+    <script>
+//Math.random() valor aleatorio entre 0 y 1, el 1 no se incluye en le valor maximo
+
+        /*for(let i = 0; i < 20; i++ ){
+            document.writeln(Math.random())
+            document.writeln('<hr>')
+
+        }*/
+
+
+
+        //ejemplo si quiero que arroje un valor aleatorio entre dos valores debo calcular la amplitud y de esta manera el numero aleatorio es sobre la amplitud
+        function getRandom(vMin, vMax){
+            const amplitud = vMax - vMin + 1;
+            const rand = Math.floor((Math.random() * amplitud) + vMin);
+            return rand;
+            //~~ es lo mismo que decir Math.floor()
+
+        }
+
+        /*for(let i = 0;i < 1000; i++){   
+                document.writeln(getRandom(270, 400));
+                document.writeln('<hr>')
+            }
+        *///de esta manera es un numero random
+
+        //si quiero sacar un valor random del indice de un array sería casí igual
+
+        //definimos el array
+        const users = [
+            'kyle',
+            'laura',
+            'melisa',
+            'diana',
+            'dayana',
+            'junior',
+            'meisi',
+            'maye',
+            'ricardo'
+        ]
+
+        const random = getRandom( 0, users.length -1 );
+        document.writeln(users[random]);
+
+
+
+
+        
+        
+
+    </script>
+</body>
+</html>

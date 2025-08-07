@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const queIndiceQuiero = 'appellido';
+
+        const u1 = {nombre: 'Nico'};
+        u1['apellido'] = 'Rios';
+        console.log(u1)
+
+
+        const u2 = [];
+        u2['nombre'] = 'German';
+        u2.appellido = 'Rodriguez';
+
+        console.log(u1.nombre);
+        console.log(u1['nombre']);
+        console.log(u1[queIndiceQuiero]);
+        console.log(u2.nombre);
+        console.log(u2['nombre']);   
+        console.log(u1[queIndiceQuiero]);
+
+
+    </script>
+</body>
+</html>

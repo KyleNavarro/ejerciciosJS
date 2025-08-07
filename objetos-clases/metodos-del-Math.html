@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodos del Math</title>
+</head>
+<body>
+    <script>
+        //Math.round(num)
+        console.log(Math.round(2.2222));//según lo mas cercano
+        console.log(Math.round(2.49));
+
+
+        //Math.ceil(num) no hacen nada con el valor si ya es entero
+        console.log(Math.ceil(2.999));
+        console.log(Math.ceil(2.2)); //hacia arriba
+
+
+
+        //Math.floor(num) no hacen nada con el valor si ya es entero
+        console.log(Math.floor(2.2));
+        console.log(Math.floor(2.5)); //hacia abajo
+
+
+        //Math.random() valor aleatorio entre 0 y 1, el 1 no se incluye en le valor maximo
+
+        for(let i = 0; i < 20; i++ ){
+            document.writeln(Math.random())
+            document.writeln('<hr>')
+
+        }
+
+
+
+    </script>
+</body>
+</html>

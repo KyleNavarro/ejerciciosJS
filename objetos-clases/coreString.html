@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Core</title>
+</head>
+<body>
+    <script>
+        const nombre = 'German';
+        const apellido = new String('Rodriguez');
+        const mensaje = '   Hola a todos en youtube aprendiendo JS   '
+        console.log(nombre.toUpperCase());
+        document.writeln(apellido.toLocaleLowerCase());
+
+        //..trim() elimina los espacios del principio y final de la cadena.. exite trimStart() y trimEnd()
+        console.log(mensaje.trim());
+
+
+
+        //.padStart().. recibe dos argumentos primero el largo y luego la cadena de caracteres que quiero que reemplace el espacio vacío
+        const num = ['1', '2', '20'];
+        num.forEach(n => console.log(n.padStart(10, 'x')));
+
+        //.inculdes() true si el str existe en el string (es case sensitive)
+    </script>
+</body>
+</html>
