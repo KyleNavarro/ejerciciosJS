@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#">Link 1</a>
+    <a href="#" id="l2">Link 2</a>
+    <a href="#">Link 3</a>
+
+    <button>btn 1</button>
+    <button id="b2">btn 2</button>
+    <button>btn 3</button>
+    <button>btn 4</button>
+
+
+    <script>
+        const l2 = document.getElementById('l2');
+        const b2 = document.getElementById('b2');
+
+        console.log({
+
+            'prev' : l2.previousElementSibling.innerHTML,
+            'next': l2.nextElementSibling.innerHTML
+            // 'prev' : l2.previousSibling.innerHTML,
+            // 'next': l2.nextSibling.innerHTML
+
+        });//previousSibling y nexSibling detectan los saltos de linea y espacios como hermanos.. por ende al imprimir por consola me sale Undefined ya que son hermanos(espacios) vacíos.
+
+        //Por eso se una con previousElementSibling y nextElementSibling, ya que estos solo buscan hermanos que sean etiquetas HTML
+
+
+        console.log({
+            'prev' : b2.previousElementSibling.innerHTML,
+            'next': b2.nextElementSibling.innerHTML,
+            // 'prev' : b2.previousSibling.innerHTML,
+            // 'next': b2.nextSibling.innerHTML
+
+            //Y si quisiera buscar el btn 4, es decir el hermano del hermano, solo debo acomularlos por notación de puntos
+            'next del next': b2.nextElementSibling.nextElementSibling.innerHTML
+
+        });
+        
+    </script>
+</body>
+</html>

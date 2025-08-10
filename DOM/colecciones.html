@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colecciones</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <button>Btn 1</button>
+    <button>Btn 2</button>
+    <button>Btn 3</button>
+    <button>Btn 4</button>
+    <button>Btn 5</button>
+    <button>Btn 6</button>
+
+    <script>
+        const p1 = document.querySelector('#p1');
+        const p2 = document.querySelector('#p2');
+        const botones = document.querySelectorAll('button');
+        const botones2 = document.getElementsByTagName('button');
+        
+
+        for(let i = 0; i < botones.length; i++){
+            botones[i].addEventListener('click', function(e){
+                p1.innerHTML = 'P1- hiciste click en '  +  e.currentTarget.innerHTML;
+            });
+        } 
+        
+        
+        for(let j = 0; j < botones2.length; j++){
+            botones2[j].addEventListener('click', function(e){
+                p2.innerHTML = 'P2- hiciste click en '  +  e.currentTarget.innerHTML;
+            });
+        }
+
+
+
+        
+    </script>
+</body>
+</html>

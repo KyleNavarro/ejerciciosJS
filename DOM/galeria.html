@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de fotos</title>
+</head>
+<body>
+    <header>
+        <h1>Mis fotos</h1>
+    </header>
+
+       <style>
+        a{
+            text-decoration: none;
+            color: #333;
+        }
+        
+
+        body{
+            margin: 0;
+        }
+        header{
+            background: #314858;
+            color: white;
+            padding: 20px;
+        }
+        header h1{
+            margin: 0;
+            text-align: center;
+        }
+        #thumbs{
+            display: flex;
+            margin: 1rem 0;
+            padding: 0;
+            list-style: none;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        #thumbs li{
+            width: 100px;
+            border: 1px solid #AAA;
+            padding: 10px;
+            background: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+        
+        #thumbs li a{
+            border: 5px solid transparent;
+            display: block;
+        }
+
+        #thumbs li a.active{
+            border-color: red;
+            
+        }
+
+        #thumbs li img{
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+
+        #thumbs li span{
+            white-space: nowrap;
+            overflow: hidden;
+            display: block;
+            text-overflow: ellipsis;
+        }
+
+        #large{
+            position: fixed;
+            inset: 0;
+            padding: 10px;
+            text-align: center;
+            margin: auto;
+            background: rgba(0, 0, 0, .6);
+            border: 1px solid #AAA;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            display: none;
+        }
+
+        #large div{
+            width: 700px;
+            background-color: white;
+            padding:30px ;
+        }
+        #large textarea{
+            display: block;
+            border: 1px solid #AAA;
+            font: 20px/30px inherit;
+            width: 80%;
+            resize: none;
+            margin: 10px auto;
+            
+        }
+
+        #large img{
+            max-width: 100%;
+            max-height: 430px;
+        }
+
+        #large span{
+            display: block;
+            text-align: center;
+            color: #AAA;
+        }
+
+        #large span b{
+            text-transform: uppercase;
+            color: #274B64;
+        }
+
+        #large.visible{
+            display: flex;
+        }
+    </style>
+
+    <main>
+        <ul id="thumbs">
+            <li><a href="#" id="img1">
+                <img src="/DOM/fotos/dandadan.webp" alt="dandadan">
+                <span>Dandadan</span>
+            </a>
+            </li>
+            <li><a href="#" id="img2" >
+                <img src="/DOM/fotos/levi.webp" alt="levi">
+                <span>Levi</span>
+            </a>
+            </li>
+            <li><a href="#" id="img3">
+                <img src="/DOM/fotos/tanjiro.webp" alt="tanjito">
+                <span>Tanjiro</span>
+            </a>
+            </li>
+            <li><a href="#">
+                <img src="/DOM/fotos/sung.webp" alt="sung">
+                <span>Sung</span>
+            </a>
+            </li>
+            <li><a href="#">
+                <img src="/DOM/fotos/sukuna.webp" alt="sukuna">
+                <span>Sukuna</span>
+            </a>               
+            </li>
+            <li><a href="#" onclick="cambiarFoto('/DOM/fotos/lufy.webp', 'Lufy')">
+                <img src="/DOM/fotos/lufy.webp" alt="lufy">
+                <span>Lufy</span>
+            </a>
+            </li>
+        </ul>
+
+
+        <div id="large">
+            <div id="submodal">
+                <span id="nombre">Dandadan <b>Anime</b></span>
+                <img src="fotos/dandadan.webp" id="imagen">
+
+                <textarea placeholder="Comentar"></textarea>
+            </div>
+            
+        </div>
+    </main>
+
+
+
+    <script src="galeria.js"></script>
+</body>
+</html>
