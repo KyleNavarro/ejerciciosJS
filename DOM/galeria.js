@@ -8,6 +8,9 @@ const fotoBig = $('imagen');
 const fotoName = $('nombre');
 const submodal = $('submodal');
 
+const mini1 = $('img1');
+const mini2 = $('img2');
+const mini3 = $('img3');
 const div = $('large')
 
 const fotitos = document.querySelectorAll('#thumbs img');
