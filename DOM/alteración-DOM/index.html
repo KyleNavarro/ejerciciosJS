@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alteración del DOM</title>
 </head>
-<body>
+<body style="display:flex; flex-direction: column;">
     <style>
         button{
             padding: 10px;
@@ -16,6 +16,24 @@
             justify-content: center;
         }
     </style>
+    <h1>createElement('recibe como argumento un string')</h1>
+    
     <button>Clickéame</button>
+
+
+    <script>
+        const btn = document.querySelector('button');
+        btn.addEventListener('click', e => {
+            const foto = document.createElement('img');
+            foto.alt = 'imagen de prueba';
+            foto.src = 'https://www.pexels.com/es-es/foto/vista-aerea-de-los-tejados-de-una-ciudad-europea-33503143/'
+            foto.width = 300;
+            console.log(foto)
+        })
+
+        console.log(btn);
+
+        
+    </script>
 </body>
 </html>
