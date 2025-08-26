@@ -32,7 +32,24 @@
             }
     </style>
 
+
+
+    <form action="search" name="buscador" style="margin: 15px auto;">
+        <input type="search" name="search" placeholder="search" style="padding: 10px;" required>
+        <button type="submit">Buscar</button>
+    </form>
+
+
     <script>
+        const form = document.querySelector('form')
+        form.addEventListener('submit', e => {
+            e.preventDefault();// prevenimos el comportamiento por defecto del submit
+            console.log('quisiste submittear')
+        });
+
+
+
+
         const btn = document.querySelector('button');
         btn.addEventListener('click', e => {
             const foto = document.createElement('img');
