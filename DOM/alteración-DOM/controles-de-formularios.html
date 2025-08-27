@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mi sitio</h1>
+
+    <form method="post" action="#">
+        <h2>Registrate</h2>
+        <div>
+            <label>Email</label>
+            <input type="email" required placeholder="Tu email" autocomplete="off">
+        </div>
+        <div>
+            <label>Clave</label>
+            <input type="password" placeholder="Tu contraseña" autocomplete="off" id="pwd">
+            <label><input value="1" type="checkbox" id="ver">Ver clave</label>
+        </div>
+        <div>
+            <label>Repetir Clave</label>
+            <input type="password" placeholder="Repetir clave" autocomplete="off" id="pwd2">
+        </div>
+
+        <div>
+            <label>Fecha Nacimiento</label>
+            <input type="date" value="2000-01-01"> 
+        </div>
+
+        <div>
+            <label>Genero</label>
+            <label><input type="radio" checked name="genero" value="m"> Masculino</label>
+            <label><input type="radio" name="genero" value="f"> Femenino</label>
+            <label><input type="radio" name="genero" value=""> Prefiero no decirlo</label>jn 
+        </div>
+
+        <div>
+            <h3>Elegi tus intereses</h3>
+            <ul>
+                <li><label>Musica <input type="checkbox" name="interes[]" value="musica" /></label></li>
+                <li><label>Cocina <input type="checkbox" name="interes[]" value="cocina" /></label></li>
+                <li><label>Series TV <input type="checkbox" name="interes[]" checked value="series" /></label></li>
+                <li><label>Peliculas <input type="checkbox" name="interes[]" value="peliculas" /></label></li>
+                <li><label>Comics <input type="checkbox" name="interes[]" value="comics" /></label></li>
+                <li><label>Informatica <input type="checkbox" name="interes[]" value="informatica" /></label></li>
+            </ul>
+        </div>
+
+        <div>
+            <label>Pais</label>
+            <select id="pais"></select>
+            <select id="provincias"></select>
+        </div>
+
+        <div>
+            <label>Tu bio</label>
+            <textarea maxlength="100" id="bio"></textarea>
+            <p>Restan <span id="restantes">100</span> caracteres</p>
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+       function popularCombo( combo, obj ){
+            combo.options.length = 0;
+            for( let item of obj ){
+                combo.options.add(new Option(item.text,item.value));
+            }
+        }
+
+        const paises = [
+            { 
+                text: 'Argentina',      
+                value: 'ar',
+                provincias: [ 
+                    { text: 'Buenos Aires', value : 'bsas' },
+                    { text: 'Cordoba', value : 'cba' },
+                    { text: 'La pampa', value : 'lp' },
+                    { text: 'Entre rios', value : 'er' }
+                ]
+            },
+            {
+                text: 'Uruguay',
+                value: 'uy',
+                provincias: [
+                    { text: 'Montevideo', value : 'mtv' } ,
+                    { text: 'Canelones', value : 'cn' },
+                    { text: 'Punta del este', value : 'pde' }
+                ]
+            }
+        ];
+
+        const inputs = document.querySelectorAll('input');
+
+        const radios = [...inputs].filter(i => i.type == 'radio');
+        const intereses = [...inputs].filter(i => i.type == 'checkbox');
+
+        const pwd = document.getElementById('pwd');
+        const pw2 = document.getElementById('pwd2');
+
+        pw2.addEventListener('input', e => {
+            console.log( pwd2.reportValidity( ) )
+            if( pwd.value == pwd2.value ){
+                pw2.setCustomValidity('');
+            }else{
+                pw2.setCustomValidity('Las claves deben coincidir');
+            }
+        });
+        
+
+
+        const ver = document.getElementById('ver');
+        ver.addEventListener('click', e => {
+            pwd.type = ver.checked ? 'text' : 'password';
+        });
+
+
+        const bio = document.getElementById('bio');
+        const span = document.getElementById('restantes');
+        bio.addEventListener('input', e => {
+            span.innerHTML = 100 - bio.value.length;
+        });
+
+        const pais = document.getElementById('pais');
+        const provincias = document.getElementById('provincias');
+
+        popularCombo( pais, paises )
+        pais.addEventListener('change', e => {
+            const listado = paises[pais.selectedIndex].provincias;
+            popularCombo( provincias, listado );
+        });
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit', e => {
+            e.preventDefault( );
+            console.log('submitteado');
+        } );
+
+    </script>
+</body>
+</html>
