@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+</head>
+<body>
+
+    <style>
+  /* Fondo oscuro semitransparente */
+  #modal {
+    position: fixed; /* se queda fijo en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6); /* sombra negra */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* por encima de todo */
+  }
+
+  /* Caja del formulario */
+  #modal form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 300px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  #modal h1 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  #modal div {
+    margin: 10px 0;
+  }
+
+  #modal input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+  }
+
+  #modal button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #modal button.cancel {
+    background: #ccc;
+  }
+
+  #modal button[type="submit"] {
+    background: #4CAF50;
+    color: white;
+  }
+    </style>
+    <h1>CREA TU CUENTA</h1>
+    <div id="actions"></div>
+
+    <script>
+        const d = document;
+        const create = (tag, attrs={}) => Object.assign( d.createElement(tag), attrs );
+
+        function createModalForm(){
+            const modal = create('div', {id: 'modal'});
+            const form = create('form', {action: 'login.php', method: 'post'});
+
+            const h2 = create('h1', {innerHTML: 'Ingresar al sistema'});
+
+            const userDiv = create('div');
+            const userLabel = create('label', {innerHTML: 'Usuario o correo'});
+            const userInput  = create( 'input', {type: 'text', name: 'user', id: 'user', placeholder: 'usuario o correo', autocomplete: 'off'});
+
+            const passDiv = create('div');
+            const passLabel = create('label', {innerHTML: 'Contraseña'});
+            const passInput  = create( 'input', {type: 'password', name: 'pwd', id: 'pwd', placeholder: 'Constraseña'});
+
+            const btnDiv = create('div');
+            const btnSubmit = create('button', {type: 'submit', innerHTML:'Ingresar'});
+            const btnCancel = create('button', {type:'button', className:'cancel', innerHTML:'Cancelar', onclick: e => {
+                modal.remove()
+            }});
+
+
+            btnDiv.append(btnSubmit, btnCancel);
+            passDiv.append(passLabel, passInput);
+            userDiv.append(userLabel, userInput);
+            form.append(h2, userDiv, passDiv, btnDiv);
+            modal.append(form);
+            document.body.append(modal);
+
+        }
+
+        function createLoginItems(actionsnav){
+            const loginBtn = create('a', {href:'javascript:void(0)', innerHTML:'Ingresar'});
+
+            loginBtn.addEventListener('click', createModalForm);
+            actionsnav.append(loginBtn);
+            
+        }
+
+        //llamamos la función para crear el botón
+        const actionsContainer = d.getElementById('actions');
+        createLoginItems(actionsContainer);
+        
+
+    </script>
+</body>
+</html>
