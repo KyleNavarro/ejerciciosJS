@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog</title>
+    <style>
+        body{
+            background: #333;
+            color: white;
+        }
+
+        img{
+            max-height: 300px;
+        }
+
+        dialog{
+            max-width: 80vw;
+            border-radius: 10px;
+        }
+
+        dialog::backdrop{
+            background-color: rgba(0, 0, 0, 60%);
+            backdrop-filter: blur(3px);/*desenfoca el fondo*/
+        }
+    </style>
+</head>
+<body>
+    <h1>Mi web</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur harum ipsam magni expedita unde sint necessitatibus cumque voluptas odit itaque, ratione ex dolor sit quaerat veniam repellendus quis numquam. Voluptatum.</p>
+
+    <img src="/DOM/fotos/levi.webp" alt="levi" id="openModal">
+
+    <dialog id="vm">
+        <h2>mas información</h2>
+        <button id="closeModal">Cerrar</button>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.Consectetur harum ipsam magni expedita unde sint necessitatibuscumque voluptas odit itaque, ratione ex dolor sit quaerat veniamrepellendus quis numquam. Voluptatum.</p>
+        <img src="/DOM/fotos/levi.webp" alt="levi">
+    </dialog>
+
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur harum ipsam magni expedita unde sint necessitatibus cumque voluptas odit itaque, ratione ex dolor sit quaerat veniam repellendus quis numquam. Voluptatum.</p>
+
+    <img src="/DOM/fotos/levi.webp" alt="levi">
+
+    <script>
+        const dialog = document.getElementById('vm');
+        const openModal = document.getElementById('openModal');
+        const closeModal = document.getElementById('closeModal');
+        
+        function modal(){
+            openModal.addEventListener('click', e => {
+                dialog.showModal();
+            })
+
+            closeModal.addEventListener('click', e => {
+                dialog.close();
+            })
+        }
+
+        modal()
+    </script>
+
+</body>
+</html>
