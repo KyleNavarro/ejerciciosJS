@@ -84,3 +84,18 @@ function cambiarFoto(url, nombre){
 //         fotoName.innerHTML = 'Dandadan';
 // }
 
+
+const thumbs = document.getElementById('thumbs');
+const li = thumbs.querySelectorAll('li');
+
+Array.from(li).forEach(item => {
+     item.addEventListener('dragstart', e => {
+        console.log('inicio del drag')
+     })
+     item.addEventListener('drag', e => {
+        console.log('draggeando')
+     })
+     item.addEventListener('dragend', e => {
+        console.log('fin del drag')
+     })
+})
